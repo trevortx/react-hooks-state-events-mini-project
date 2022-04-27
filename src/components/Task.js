@@ -1,11 +1,13 @@
+import { set } from "express/lib/application";
 import React from "react";
 
-function Task() {
+function Task({ onDeleteTask, text, category }) {
+  
   return (
     <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+      <div className="label">{category}</div>
+      <div className="text">{text}</div>
+      <button className="delete" value={text} onClick={onDeleteTask}>X</button>
     </div>
   );
 }
